@@ -18,13 +18,16 @@ public class Controller {
     public ResponseEntity<String> submitContactForm(@RequestBody Entity contact) {
 
         System.out.println("Nom: " + contact.getName());
+        System.out.println("Prénom: " + contact.getFirstname());
+        System.out.println("Company: " + contact.getCompany());
         System.out.println("Numéro: " + contact.getPhone());
         System.out.println("Email: " + contact.getEmail());
+        System.out.println("Site: " + contact.getSite());
         System.out.println("Message: " + contact.getMessage());
 
         String to = contact.getEmail();
         String subject = "Nouveau formulaire de contact";
-        String body = "Nom: " + contact.getName() + "\nEmail: " + contact.getEmail() + "\nMessage: " + contact.getMessage() + "\nPhone: " + contact.getPhone();
+        String body = "Nom: " + contact.getName() + "\nPrénom: " + contact.getFirstname() + "\nEmail: " + contact.getEmail() + "\nMessage: " + contact.getMessage() + "\nPhone: " + contact.getPhone() + "\nCompany: " + contact.getCompany()+ "\nSite: " + contact.getSite();
         service.sendEmail(to, subject, body);
         return ResponseEntity.ok("Formulaire soumis avec succès !");
     }
