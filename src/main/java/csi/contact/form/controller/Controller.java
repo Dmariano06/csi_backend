@@ -20,6 +20,7 @@ public class Controller {
         System.out.println("Nom: " + contact.getName());
         System.out.println("Prénom: " + contact.getFirstname());
         System.out.println("Nom de votre société: " + contact.getCompany());
+        System.out.println("Votre secteur d'activité: " + contact.getActivity());
         System.out.println("Numéro: " + contact.getPhone());
         System.out.println("Email: " + contact.getEmail());
         System.out.println("Type de site souhaité: " + contact.getSite());
@@ -27,7 +28,7 @@ public class Controller {
 
         String to = contact.getEmail();
         String subject = "Récapitulatif Formulaire de Contact CSI";
-        String body = "Nom: " + contact.getName() + "\nPrénom: " + contact.getFirstname() + "\nEmail: " + contact.getEmail() + "\nDétails: " + contact.getMessage() + "\nNuméro de téléphone: " + contact.getPhone() + "\nNom de votre société: " + contact.getCompany()+ "\nType de site souhaité: " + contact.getSite();
+        String body = "Nom: " + contact.getName() + "\nPrénom: " + contact.getFirstname() + "\nEmail: " + contact.getEmail() + "\nDétails: " + contact.getMessage() + "\nNuméro de téléphone: " + contact.getPhone() + "\nNom de votre société: " + contact.getCompany()+ "\n Secteur d'activité" + contact.getActivity() + "\nType de site souhaité: " + contact.getSite();
         service.sendEmail(to, subject, body);
         return ResponseEntity.ok("Formulaire soumis avec succès !");
     }

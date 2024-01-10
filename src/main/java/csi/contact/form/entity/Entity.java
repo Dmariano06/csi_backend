@@ -11,6 +11,15 @@ public class Entity {
     private Long id;
     private String name;
 
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
+    }
+
+    private String activity;
     private String firstname;
 
     public String getFirstname() {
