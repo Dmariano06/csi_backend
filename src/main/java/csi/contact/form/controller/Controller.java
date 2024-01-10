@@ -28,7 +28,7 @@ public class Controller {
         String to = contact.getEmail();
         String cc = "csibusiness.secretariat@gmail.com";
         String subject = "Récapitulatif Formulaire de Contact CSI";
-        String body = "Nom: " + contact.getName() + "\nPrénom: " + contact.getFirstname() + "\nEmail: " + contact.getEmail() + "\nDétails: " + contact.getMessage() + "\nNuméro de téléphone: " + contact.getPhone() + "\nNom de votre société: " + contact.getCompany() + "\n Secteur d'activité" + contact.getActivity() + "\nType de site souhaité: " + contact.getSite();
+        String body = "Nom: " + contact.getName() + "\nPrénom: " + contact.getFirstname() + "\nEmail: " + contact.getEmail() + "\nDétails: " + contact.getMessage() + "\nNuméro de téléphone: " + contact.getPhone() + "\nNom de votre société: " + contact.getCompany() + "\n Secteur d'activité: " + contact.getActivity() + "\nType de site souhaité: " + contact.getSite();
 
         service.sendEmail(to, subject, body,cc);  // Ajoutez cc comme destinataire
         return ResponseEntity.ok("Formulaire soumis avec succès !");
